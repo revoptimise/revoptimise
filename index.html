@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RevOptimise - Long-term revenue operations partner for B2B SaaS companies. We build scalable revenue systems and enable your team from $0-20M ARR.">
+    <title>RevOptimise - Revenue Operations Partner for B2B SaaS</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-blue: #2563EB;
+    --white: #FFFFFF;
+    --light-bg: #F8FAFC;
+    --text-dark: #1F2937;
+    --text-medium: #4B5563;
+    --text-light: #6B7280;
+    --border-color: #E5E7EB;
+    --success-green: #059669;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    padding-top: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header Navigation */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.logo:hover {
+    color: var(--accent-blue);
+}
+
+.main-nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.main-nav a {
+    color: var(--text-medium);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: var(--primary-blue);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.contact-btn {
+    padding: 0.625rem 1.5rem;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.contact-btn:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--white);
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    min-width: 160px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-bg);
+    transform: translateY(-2px);
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-medium);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Why RevOptimise Section */
+.why-revops {
+    background-color: var(--light-bg);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.why-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.why-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+.why-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.why-card p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* Common Challenges Section */
+.challenges {
+    background-color: var(--white);
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.challenge-card {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border-top: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.challenge-card:hover {
+    border-top-color: var(--accent-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.challenge-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.challenge-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.challenge-card p {
+    color: var(--text-medium);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* How We Work Section */
+.how-we-work {
+    background-color: var(--light-bg);
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.work-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.work-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.work-card ul {
+    list-style: none;
+}
+
+.work-card li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.work-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+/* Skills Matrix Section */
+.skills-matrix {
+    background-color: var(--white);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.skills-table thead {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.skills-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.skills-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skills-table tbody tr:hover {
+    background-color: var(--light-bg);
+}
+
+.skills-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.badge-expert,
+.badge-strong {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.badge-expert {
+    background-color: #DBEAFE;
+    color: var(--accent-blue);
+}
+
+.badge-strong {
+    background-color: #E0E7FF;
+    color: #4F46E5;
+}
+
+.demo-link {
+    display: inline-block;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: color 0.2s ease;
+}
+
+.demo-link:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+.demo-note {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Client Results Section */
+.experience {
+    background-color: var(--light-bg);
+}
+
+.experience-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.experience-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-blue);
+    transition: all 0.2s ease;
+}
+
+.experience-card.featured {
+    background: linear-gradient(135deg, #F0F9FF 0%, var(--white) 100%);
+    border-left-width: 6px;
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.experience-card .role {
+    font-size: 0.95rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.experience-card .description {
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.results {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.result-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--success-green);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-medium);
+    margin-top: 0.25rem;
+}
+
+.key-focus {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* Track Record Section */
+.track-record {
+    background-color: var(--white);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-section .btn-primary {
+    background-color: var(--white);
+    color: var(--primary-blue);
+}
+
+.cta-section .btn-primary:hover {
+    background-color: var(--light-bg);
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--light-bg);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.role-title {
+    font-size: 1.125rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.about-description {
+    margin-bottom: 2rem;
+}
+
+.about-description p {
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.about-details h4 {
+    font-size: 1.125rem;
+    color: var(--primary-blue);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-details p {
+    color: var(--text-medium);
+    line-height: 1.7;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--white);
+}
+
+.contact-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-medium);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info-section h3,
+.contact-form-wrapper h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.contact-details {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-item strong {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.contact-item a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+.contact-form button {
+    padding: 1rem;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .contact-btn {
+        order: 2;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .why-grid,
+    .challenges-grid,
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-table thead {
+        display: none;
+    }
+
+    .skills-table,
+    .skills-table tbody,
+    .skills-table tr,
+    .skills-table td {
+        display: block;
+    }
+
+    .skills-table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .skills-table td {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .skills-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .skills-table td:first-child {
+        background-color: var(--light-bg);
+        font-weight: 600;
+        color: var(--primary-blue);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image {
+        order: -1;
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .results {
+        gap: 1rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .cta-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-nav {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .experience-card {
+        padding: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">RevOptimise</a>
+                <nav class="main-nav">
+                    <a href="#home">Home</a>
+                    <a href="#how-we-work">How We Work</a>
+                    <a href="#results">Results</a>
+                    <a href="#about">About</a>
+                </nav>
+                <a href="#contact" class="contact-btn">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Growth Partner, Not Just Consultancy</h1>
+                <p class="description">We don't parachute in, fix one thing, and leave. We build scalable revenue systems with your team and enable your organisation to adopt RevOps thinking - so you can scale from $0-20M ARR without a rebuild or expensive senior hires.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-primary">Start the Conversation</a>
+                    <a href="#how-we-work" class="btn-secondary">How We Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why RevOptimise Section -->
+    <section class="why-revops">
+        <div class="container">
+            <h2>Why RevOptimise</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-number">1</div>
+                    <h3>We Build It With You, Not For You</h3>
+                    <p>Most consultants deliver a solution and walk away. We embed with your team, train them to think like RevOps, and build the internal capability so you're not dependent on outside experts forever.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">2</div>
+                    <h3>Long-Term Partnership</h3>
+                    <p>Start with a focused audit so we fully understand your situation. From there, we create a collaborative plan that tackles your immediate priorities and sets a clear roadmap for your next phase of growth. You tap into over 20 years of experience at a fraction of the cost of a full-time hire, and we stay by your side while you scale.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-number">3</div>
+                    <h3>Platform for Scale</h3>
+                    <p>We solve today's challenges while building a lasting revenue operating model - streamlined processes, optimised tech stack, proven playbooks, and stronger team capabilities - that drives growth long after we're gone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Challenges Section -->
+    <section class="challenges">
+        <div class="container">
+            <h2>The Problems We Solve</h2>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span class="challenge-icon">📊</span>
+                    <h3>Predictable Revenue</h3>
+                    <p>Your board wants confidence in the numbers. We support you to build the right forecast model that's bespoke & actually works - so you can commit to revenue targets and hit them.</p>
+                </div>
+                <div class="challenge-card">
+                    <span class="challenge-icon">⏱️</span>
+                    <h3>Time to Productivity</h3>
+                    <p>New reps taking 6 months to close their first deal? We design onboarding and enablement programs to empower your teams to dramatically accelerate their ramp-up.</p>
+                </div>
+                <div class="challenge-card">
+                    <span class="challenge-icon">💰</span>
+                    <h3>Effective Compensation</h3>
+                    <p>Great incentive structures drive the right behaviours to deliver business results. We design plans that perfectly align revenue team earnings with your company's goals, motivating peak performance across the team.</p>
+                </div>
+                <div class="challenge-card">
+                    <span class="challenge-icon">🎯</span>
+                    <h3>Replicating Success</h3>
+                    <p>Founder-led wins don't scale to 10 reps. We analyse the critical steps to turn your winning playbook into repeatable processes that everyone can execute.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="how-we-work">
+        <div class="container">
+            <h2>How We Work</h2>
+            <p class="section-intro">We're a long-term growth partner who adapts to where you are in your journey. Here's what that looks like in practice:</p>
+            
+            <div class="work-grid">
+                <div class="work-card">
+                    <h3>Our Process</h3>
+                    <ul>
+                        <li>Start with an audit and diagnostic review</li>
+                        <li>Identify critical actions and prioritize quick wins</li>
+                        <li>Deliver a specific growth plan with milestones</li>
+                        <li>Transition to retained expert or advisory role</li>
+                        <li>Scale our involvement up or down as you mature</li>
+                    </ul>
+                </div>
+                
+                <div class="work-card">
+                    <h3>Who We Work With</h3>
+                    <ul>
+                        <li>B2B SaaS and technology companies</li>
+                        <li>Early-stage founders (Seed to Series C)</li>
+                        <li>VPs of Sales & Chief Revenue Officers</li>
+                        <li>Companies scaling $0-20M ARR, 15-200 employees</li>
+                        <li>UK-based with global timezone flexibility</li>
+                    </ul>
+                </div>
+                
+                <div class="work-card">
+                    <h3>What We Deliver</h3>
+                    <ul>
+                        <li>Revenue systems that scale (tech + process + people)</li>
+                        <li>Team enablement and capability building</li>
+                        <li>Documentation, playbooks, and frameworks</li>
+                        <li>Hands-on coaching and knowledge transfer</li>
+                        <li>Ongoing advisory as you grow and evolve</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Capabilities Section -->
+    <section id="services" class="skills-matrix">
+        <div class="container">
+            <h2>Our Capabilities</h2>
+            <p class="section-intro">We don't just advise—we build, implement, and enable. Every engagement is backed by real experience delivering measurable results across B2B SaaS and technology companies.</p>
+            
+            <div class="table-wrapper">
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th>What You're Solving</th>
+                            <th>How We Help</th>
+                            <th>What You Get</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="What You're Solving">We need RevOps expertise but can't afford a full-time hire</td>
+                            <td data-label="How We Help">Fractional leadership + team enablement</td>
+                            <td data-label="What You Get">Your team thinking like RevOps, capability to run operations independently</td>
+                        </tr>
+                        <tr>
+                            <td data-label="What You're Solving">We can't predict revenue or hit our targets</td>
+                            <td data-label="How We Help">Build forecasting systems with your team</td>
+                            <td data-label="What You Get">Board-ready forecasts you can commit to, quota models aligned to growth targets</td>
+                        </tr>
+                        <tr>
+                            <td data-label="What You're Solving">Our sales team takes too long to ramp</td>
+                            <td data-label="How We Help">Design right-sized sales processes that work for users and the business</td>
+                            <td data-label="What You Get">New reps productive in half the time, repeatable processes everyone actually follows</td>
+                        </tr>
+                        <tr>
+                            <td data-label="What You're Solving">Our tech stack is a mess and nobody uses it</td>
+                            <td data-label="How We Help">Optimize systems and train your team to own them</td>
+                            <td data-label="What You Get">A revenue platform that scales with growth & real-time dashboards your team actually use</td>
+                        </tr>
+                        <tr>
+                            <td data-label="What You're Solving">Commission plans aren't driving the right sales behaviour</td>
+                            <td data-label="How We Help">Design compensation structures aligned to business goals</td>
+                            <td data-label="What You Get">Sales focused on high-value activities, commissions that reward the right outcomes</td>
+                        </tr>
+                        <tr>
+                            <td data-label="What You're Solving">Sales and marketing aren't aligned</td>
+                            <td data-label="How We Help">Establish cross-functional processes and shared metrics</td>
+                            <td data-label="What You Get">Unified revenue playbooks, teams working to aligned goals</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--text-medium); margin-bottom: 1rem;">See a sample of our work:</p>
+                <a href="https://revoptimise.lovable.app/" target="_blank" rel="noopener noreferrer" class="demo-link">
+                    View GTM Performance Tracker Demo →
+                </a>
+                <p class="demo-note">Built to demonstrate real-time pipeline visibility and KPI tracking capabilities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Results Section -->
+    <section id="results" class="experience">
+        <div class="container">
+            <h2>Client Results</h2>
+            <p class="section-intro">We measure success by the revenue systems we build and the teams we enable. Here's what that partnership looks like in action:</p>
+            
+            <div class="experience-grid">
+                <div class="experience-card featured">
+                    <h3>LegalFly</h3>
+                    <p class="role">Fractional Revenue Operations Leadership</p>
+                    <p class="description">We partnered with the founding team to build their GTM strategy & plan. Budget & headcount modelling, sales processes, commission plan design, and a Go-To-Market reporting suite. Along the way, we enabled their team to manage and optimise the revenue ecosystem themselves.</p>
+                    <div class="results">
+                        <div class="result-stat">
+                            <span class="stat-value">700%</span>
+                            <span class="stat-label">YoY ARR Growth</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-value">&lt;5%</span>
+                            <span class="stat-label">Churn Rate</span>
+                        </div>
+                    </div>
+                    <p class="key-focus"><strong>Impact:</strong> 700% YoY ARR Growth & <5% Churn rate</p>
+                </div>
+                
+                <div class="experience-card featured">
+                    <h3>UPP.ai</h3>
+                    <p class="role">Interim VP of Sales</p>
+                    <p class="description">We partnered with the founders to build and operationalise the GTM motion post-investment - from founder-led sales to repeatable GTM motion. This included building the sales processes and enabling the operational capabilities they needed to scale.</p>
+                    <div class="results">
+                        <div class="result-stat">
+                            <span class="stat-value">3x</span>
+                            <span class="stat-label">Customer Value</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-value">Record</span>
+                            <span class="stat-label">ARR Quarters</span>
+                        </div>
+                    </div>
+                    <p class="key-focus"><strong>Impact:</strong> Consecutive Record ARR Quarters. Tripling the Average Customer Value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Record Section -->
+    <section class="track-record">
+        <div class="container">
+            <h2>Our Track Record</h2>
+            <p class="section-intro">Before founding RevOptimise, we built and scaled revenue operations at leading B2B SaaS and technology companies:</p>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Natterbox</h3>
+                    <p class="role">Revenue Operations Director</p>
+                    <p class="description">Partnered with the new CRO to build and execute the annual Go-To-Market Plan. Establishing Revenue Operations as a function, driving cross-functional alignment across global teams and building an effective AI-enhanced revenue operating platform.</p>
+                    <div class="results">
+                        <div class="result-stat">
+                            <span class="stat-value">2x</span>
+                            <span class="stat-label">Earlier Renewals</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-value">2x</span>
+                            <span class="stat-label">Contract Length</span>
+                        </div>
+                    </div>
+                    <p class="key-focus"><strong>Impact:</strong> Accelerated time to renew by 2x and doubled average contract length.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Vodafone Business</h3>
+                    <p class="role">Head of Commercial Operations</p>
+                    <p class="description">We led commercial operations transformation for the UK's largest B2B telco sales organization, building scalable systems across hundreds of sellers.</p>
+                    <div class="results">
+                        <div class="result-stat">
+                            <span class="stat-value">50%</span>
+                            <span class="stat-label">Less Admin Time</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-value">99%</span>
+                            <span class="stat-label">First-Time Orders</span>
+                        </div>
+                    </div>
+                    <p class="key-focus"><strong>Impact:</strong> Freed 6 hours/week per seller through admin reduction. Eliminated duplicate records achieving 99% first-time order accuracy. Built internal AI tariff engine solving 80%+ of pricing comparisons in minutes vs. 48-hour external SLA.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Bizagi</h3>
+                    <p class="role">Head of Sales & Marketing Operations</p>
+                    <p class="description">Established the worldwide Go-To-Market operations team from the ground up - building the revenue platform, processes, and team capability to accelerate growth across global markets.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>ZPG (Zoopla Property Group)</h3>
+                    <p class="role">Commercial Operations Director</p>
+                    <p class="description">Joined post-IPO to build an enterprise-grade commercial operations organisation - integrating sales, marketing, and customer operations to drive sustainable growth and market share.</p>
+                    <div class="results">
+                        <div class="result-stat">
+                            <span class="stat-value">2x</span>
+                            <span class="stat-label">Lead Volume</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-value">+10pts</span>
+                            <span class="stat-label">NPS Gain</span>
+                        </div>
+                    </div>
+                    <p class="key-focus"><strong>Impact:</strong> Launched customer success function delivering 10-point NPS improvement within 6 months. Integrated multiple acquired businesses onto a unified Go-To-Market operating platform. Delivered ICP data model enabling acquisition of target accounts and identification of cross-sell opportunities.</p>
+                </div>
+                
+                <div class="experience-card">
+                    <h3>Symantec (MessageLabs)</h3>
+                    <p class="role">Director, Global Sales Operations</p>
+                    <p class="description">Worldwide sales operations lead through the hyper-growth phase and post-acquisition integration. Built the revenue platform and team capabilities to scale the Go-To-Market organisation globally.</p>
+                    <div class="results">
+                        <div class="result-stat">
+                            <span class="stat-value">30%</span>
+                            <span class="stat-label">Margin Improvement</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-value">2x</span>
+                            <span class="stat-label">SMB Productivity</span>
+                        </div>
+                    </div>
+                    <p class="key-focus"><strong>Impact:</strong> Implemented worldwide incentive plans delivering 30% gross margin improvement within 12 months. Created an intensive sales onboarding program that doubled SMB sales productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build a Revenue Engine That Scales?</h2>
+            <p>We work with a small number of clients at a time to ensure hands-on partnership. If you're ready to move from chaotic growth to predictable revenue, let's talk.</p>
+            <a href="#contact" class="btn-primary">Start the Conversation</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About RevOptimise</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-description">
+                        <p>RevOptimise was founded to solve a common problem in B2B SaaS: companies need expert revenue operations guidance, but they're not ready for a full-time senior hire. We partner with early-stage founders and revenue leaders to build the systems, processes, and team capabilities that drive predictable growth from $0-20M ARR.</p>
+                        
+                        <p>Our approach is different. We don't just deliver solutions—we build them with you and enable your team to think like RevOps. That means you're not dependent on outside experts forever. We stay engaged as long as you need us, transitioning from hands-on implementation to strategic advisory as your team matures.</p>
+                    </div>
+
+                    <div class="about-details">
+                        <h4>Meet the Founder</h4>
+                        <p><strong>Jono Pank</strong> brings 20+ years of experience scaling revenue operations across B2B SaaS and technology companies—from early-stage startups to global enterprises like Vodafone Business.</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23E0E7FF' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='120' text-anchor='middle' dy='.3em' fill='%231E3A8A' font-family='system-ui'%3EJP%3C/text%3E%3C/svg%3E" width="400" height="400" alt="Jono Pank" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Talk About Scaling Your Revenue</h2>
+            <p class="contact-intro">Whether you're struggling with forecast accuracy, sales productivity, or scaling past $10M ARR—let's talk. We'll figure out if we're the right fit for where you are now.</p>
+            
+            <div class="contact-form-wrapper" style="max-width: 700px; margin: 0 auto;">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSf3HvdH8r6zd2PWkq3rOh5GneNgGMAtwcpjlgRPaIhKLAVAgw/viewform?embedded=true" 
+                    width="100%" 
+                    height="900" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);"
+                >Loading…</iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 RevOptimise | Long-term Revenue Operations Partner for B2B SaaS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
