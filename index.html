@@ -25,9 +25,11 @@
   <meta property="og:description" content="RevOptimise deploys AI sales agents for early-stage B2B companies. Fractional RevOps consultant helping founders build a scalable GTM motion without adding headcount.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://revoptimise.com">
+  <meta property="og:image" content="https://revoptimise.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="RevOptimise | AI Sales Agent &amp; RevOps Consultant for B2B SaaS">
   <meta name="twitter:description" content="RevOptimise deploys AI sales agents for early-stage B2B companies. Fractional RevOps consultant helping founders build a scalable GTM motion.">
+  <meta name="twitter:image" content="https://revoptimise.com/og-image.png">
 
   <style>
     /* ─── Reset ─────────────────────────────────────────── */
@@ -101,6 +103,37 @@
       white-space:nowrap;
     }
     .nav-cta:hover { background:#00E0CE; transform:translateY(-1px); }
+    .nav-links { display:flex; align-items:center; gap:1.8rem; }
+    .nav-link {
+      font-size:.85rem; font-weight:500; color:rgba(255,255,255,0.65);
+      text-decoration:none; transition:color .2s;
+    }
+    .nav-link:hover { color:var(--teal); }
+    .nav-right { display:flex; align-items:center; gap:1.8rem; }
+    @media (max-width:640px) {
+      .nav-links { display:none; }
+    }
+
+    /* ─── Testimonial ───────────────────────────────────── */
+    .testimonial-strip {
+      background:rgba(0,194,179,0.06); border:1px solid rgba(0,194,179,0.15);
+      border-radius:var(--radius); padding:2rem 2.5rem;
+      margin-bottom:3rem; position:relative;
+    }
+    .testimonial-strip::before {
+      content:'\201C'; font-size:3.5rem; line-height:.8;
+      color:var(--teal); opacity:.3; display:block;
+      margin-bottom:.5rem; font-family:Georgia,serif;
+    }
+    .testimonial-quote {
+      font-size:1.05rem; font-style:italic;
+      color:rgba(255,255,255,0.85); line-height:1.7;
+      margin-bottom:.8rem;
+    }
+    .testimonial-cite {
+      font-size:.85rem; color:var(--teal); font-weight:600; font-style:normal;
+    }
+    .testimonial-cite span { color:rgba(255,255,255,0.45); font-weight:400; }
 
     /* ─── Hero ───────────────────────────────────────────── */
     .hero {
@@ -644,7 +677,15 @@
   <div class="container">
     <div class="nav-inner">
       <a href="#" class="nav-logo">Rev<span>Optimise</span></a>
-      <a href="#contact" class="nav-cta">Get in touch</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#how" class="nav-link">How It Works</a>
+          <a href="#agent" class="nav-link">The Agent</a>
+          <a href="#track" class="nav-link">Track Record</a>
+          <a href="#about" class="nav-link">About</a>
+        </div>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -877,7 +918,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           </div>
           <div>
-            <div class="plugin-role">SDR Playbook</div>
+            <div class="plugin-role">Outbound Playbook</div>
             <div class="plugin-desc">ICP definition, personalisation framework, objection handling, qualification criteria, installed as an AI agent instruction set.</div>
           </div>
         </div>
@@ -917,9 +958,9 @@
 <section class="agent-section" id="agent">
   <div class="container">
     <div class="section-header">
-      <span class="tag">The Sales Agent Model</span>
+      <span class="tag">AgenticAE</span>
       <h2 style="color:var(--white)">One AE, one agent,<br><em style="font-style:normal;color:var(--teal)">multiple territories.</em></h2>
-      <p>Your sales process, packaged as an AI agent. It handles everything systematic. Your AE focuses on what only a human can do well. The result is one person with the reach of two.</p>
+      <p>AgenticAE is your sales process, packaged as an AI agent. It handles everything systematic. Your AE focuses on what only a human can do well. The outcome: Every individual has the execution of multiple.</p>
     </div>
 
     <!-- Instructions / Skills / Plugins -->
@@ -1009,7 +1050,7 @@
     <div style="margin-top:3rem; background:var(--white); border:1px solid #E5E7EB; border-radius:var(--radius); padding:2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;">
       <div>
         <p style="font-size:1rem; font-weight:700; color:var(--text); margin-bottom:.25rem;">Flexible by design. We scope the engagement around what you actually need.</p>
-        <p style="font-size:.9rem; color:#6B7280;">Initial diagnostic included. You know exactly what you are getting before we start.</p>
+        <p style="font-size:.9rem; color:#6B7280;">Engagements start from <strong style="color:var(--text);">&pound;6,000</strong>. Initial diagnostic included. You know exactly what you are getting before we start.</p>
       </div>
       <a href="#contact" class="btn-primary" style="white-space:nowrap; background:var(--navy); color:var(--white); box-shadow:none;">Get in touch &rarr;</a>
     </div>
@@ -1024,6 +1065,11 @@
       <h2 style="color:var(--white)">Senior experience<br>across the spectrum</h2>
       <p style="color:rgba(255,255,255,0.6)">20+ years building and fixing revenue motions in B2B SaaS, from early stage through enterprise. I have seen what works and what does not.</p>
     </div>
+    <div class="testimonial-strip">
+      <p class="testimonial-quote">Jono is the kind of partner you always hope to have on your team &mdash; strategically strong, a phenomenal communicator, and deeply committed to driving results. His knack for connecting the dots between strategy and execution consistently delivered measurable results.</p>
+      <cite class="testimonial-cite">Arthur Velasquez, CRO</cite>
+    </div>
+
     <div class="track-grid">
       <div class="track-card">
         <div class="track-company">LegalFly</div>
@@ -1064,8 +1110,11 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-photo-wrap">
-        <img src="jono.jpg" alt="Jono Pank, Founder, RevOptimise"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <picture>
+          <source srcset="jono.webp" type="image/webp">
+          <img src="jono.jpg" alt="Jono Pank, Founder, RevOptimise" loading="lazy"
+            onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex';">
+        </picture>
         <div class="about-photo-fallback">
           <div style="font-size:4rem;font-weight:800;color:var(--teal);letter-spacing:-.05em;line-height:1;">JP</div>
           <div style="font-size:1rem;font-weight:700;color:var(--white);margin-top:.6rem;">Jono Pank</div>
@@ -1107,7 +1156,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <p>An AI sales agent is a Claude-powered assistant deployed alongside a human Account Executive. It handles the work that doesn't require human judgement — updating the CRM after every call, drafting follow-up emails, qualifying deals against your methodology, and surfacing pipeline risk. The AE focuses on relationships and decisions. The agent handles everything else, around the clock.</p>
+          <p>AgenticAE is a Claude-powered AI sales agent deployed alongside a human Account Executive. It handles the work that does not require human judgement: updating the CRM after every call, drafting follow-up emails, qualifying deals against your methodology, and surfacing pipeline risk. The AE focuses on relationships and decisions. The agent handles everything else, around the clock.</p>
         </div>
       </div>
 
@@ -1161,7 +1210,7 @@
         <h3>Tell me about your business</h3>
         <p>A few details about where you are. I respond within one working day.</p>
         <div class="form-wrap">
-          <div style="width:100%;height:500px;" data-fillout-id="rSuShrAAjKus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+          <div style="width:100%;height:500px;" data-fillout-id="rSuShrAAjKus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize loading="lazy"></div>
         </div>
       </div>
 
