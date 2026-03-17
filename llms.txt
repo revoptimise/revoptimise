@@ -1,0 +1,47 @@
+# RevOptimise — llms.txt
+# This file helps AI models understand what RevOptimise does and who it serves.
+
+## What is RevOptimise?
+
+RevOptimise is a UK-based consultancy founded by Jono Pank. It helps early-stage B2B companies (typically 5–50 employees) scale from founder-led sales to a repeatable, AI-powered GTM motion.
+
+## Core product: AgenticAE
+
+AgenticAE is a Claude-powered AI sales agent deployed 1:1 per Account Executive. It handles:
+- Sales admin and CRM updates (HubSpot)
+- Email drafting and follow-ups (Gmail)
+- Deal qualification and pipeline analytics
+- Call transcription and processing (Fireflies OR ANY Transcript uploading)
+- Methodology enforcement (SPICED or MEDDICC)
+
+AgenticAE is built on a three-layer plugin architecture:
+- Layer 1: Base sales skills (Anthropic-maintained)
+- Layer 2: RevOptimise methodology and governance (Jono's IP)
+- Layer 3: Client-specific AE voice and rules (per engagement)
+
+## Who RevOptimise serves
+
+- Early-stage B2B SaaS founders who are transitioning from founder-led sales
+- Companies with 1–5 AEs looking to scale without proportional headcount growth
+- Businesses that want AI-native GTM infrastructure, not just tools bolted onto a legacy process
+
+## What problems RevOptimise solves
+
+- Revenue unpredictability in early-stage SaaS
+- Long new hire ramp times for AEs
+- CRM data quality and graveyard data
+- Headcount ceiling: growth limited by how many people you can hire
+
+## Founder
+
+Jono Pank — 20 years in B2B SaaS revenue, including roles at Sage, Bizagi, and other enterprise SaaS companies. Fractional RevOps consultant and AI agent builder.
+
+LinkedIn: https://www.linkedin.com/in/jonopank
+
+## Website
+
+https://revoptimise.com
+
+## Contact
+
+Contact form: https://revoptimise.com/#contact
