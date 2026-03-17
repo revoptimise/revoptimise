@@ -8,6 +8,15 @@
   <link rel="canonical" href="https://revoptimise.com">
   <meta name="google-site-verification" content="gd9zQYdxHuooogrddOq8HxeVm-roqdbHJBgNUENOZSA" />
 
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK2GKB62PT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VK2GKB62PT');
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23050E21'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%2300C2B3' font-size='14' font-weight='800' font-family='system-ui,sans-serif'>R</text></svg>">
 
@@ -466,6 +475,24 @@
       font-size:1.1rem; color:rgba(255,255,255,0.62);
       max-width:500px; margin:0 auto 2.5rem; line-height:1.7;
     }
+
+    /* ─── FAQ ───────────────────────────────────────────── */
+    .faq-section { padding:100px 0; background:var(--white); }
+    .faq-list { max-width:720px; margin:0 auto; }
+    .faq-item { border-bottom:1px solid #E5E7EB; }
+    .faq-item:first-child { border-top:1px solid #E5E7EB; }
+    .faq-q {
+      width:100%; display:flex; justify-content:space-between; align-items:center;
+      background:none; border:none; padding:1.4rem 0; cursor:pointer;
+      font-size:1.05rem; font-weight:600; color:var(--text);
+      text-align:left; gap:1rem;
+    }
+    .faq-q:hover { color:var(--teal); }
+    .faq-icon { font-size:1.4rem; font-weight:300; color:var(--teal); flex-shrink:0; transition:transform .25s; }
+    .faq-q[aria-expanded="true"] .faq-icon { transform:rotate(45deg); }
+    .faq-a { display:none; padding:0 0 1.4rem; }
+    .faq-a.open { display:block; }
+    .faq-a p { font-size:.95rem; color:var(--slate); line-height:1.75; }
 
     /* ─── Contact section ────────────────────────────────── */
     .contact-section { padding:100px 0; background:var(--off-white); }
@@ -1065,6 +1092,59 @@
   </div>
 </section>
 
+<!-- ── FAQ ───────────────────────────────────────────────── -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header" style="text-align:center; max-width:560px; margin:0 auto 3rem;">
+      <span class="tag">FAQ</span>
+      <h2 style="font-size:2rem; color:var(--text); margin-top:.75rem;">Common questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What is an AI sales agent?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>An AI sales agent is a Claude-powered assistant deployed alongside a human Account Executive. It handles the work that doesn't require human judgement — updating the CRM after every call, drafting follow-up emails, qualifying deals against your methodology, and surfacing pipeline risk. The AE focuses on relationships and decisions. The agent handles everything else, around the clock.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Who is RevOptimise for?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>RevOptimise works with early-stage B2B companies — typically 5 to 50 employees — that are transitioning from founder-led sales to a repeatable GTM motion. If you have one to five AEs, revenue that feels unpredictable, and a CRM that nobody trusts, this is built for you. If you are a 200-person enterprise with a full RevOps team, it is probably not the right fit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How is this different from hiring a RevOps consultant?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A traditional RevOps consultant delivers a strategy and leaves. RevOptimise is embedded — I build the infrastructure, deploy the agent, and stay involved to make sure it actually runs. The AI agent then maintains that infrastructure every day without ongoing consultancy fees. You get the strategic expertise of a senior RevOps hire and the operational consistency of a system that never has an off day.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How long does it take to deploy?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A typical AgenticAE deployment takes four to six weeks from kickoff to a live agent in production. The first two weeks cover GTM diagnostic and methodology design. Weeks three and four cover agent build, CRM configuration, and integration with your existing tools. The final phase is a supervised go-live with your AEs before handover. You will see the agent handling real tasks before the end of week four.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── Contact ────────────────────────────────────────────── -->
 <section class="contact-section" id="contact">
   <div class="container">
@@ -1148,5 +1228,21 @@
 </script>
   <!-- Fillout embed script -->
   <script src="https://server.fillout.com/embed/v1/"></script>
+  <!-- FAQ accordion -->
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-q').forEach(function(b) {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        if (!expanded) {
+          this.setAttribute('aria-expanded', 'true');
+          this.nextElementSibling.classList.add('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
