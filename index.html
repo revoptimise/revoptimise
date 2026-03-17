@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RevOptimise — Fractional RevOps for early-stage SaaS founders. Build a Go-To-Market motion that scales with intelligence, not just headcount.">
-  <title>RevOptimise — Scale with Intelligence</title>
+  <meta name="description" content="RevOptimise: Fractional RevOps for early-stage SaaS founders. Build a Go-To-Market motion that scales with intelligence, not just headcount.">
+  <title>RevOptimise: Scale with Intelligence</title>
+
+  <!-- Tally Form -->
+
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23050E21'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%2300C2B3' font-size='14' font-weight='800' font-family='system-ui,sans-serif'>R</text></svg>">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="RevOptimise — Scale with Intelligence">
+  <meta property="og:title" content="RevOptimise: Scale with Intelligence">
   <meta property="og:description" content="Fractional RevOps for early-stage SaaS founders. Build a Go-To-Market motion that scales with AI, not just headcount.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://revoptimise.com">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="RevOptimise — Scale with Intelligence">
+  <meta name="twitter:title" content="RevOptimise: Scale with Intelligence">
   <meta name="twitter:description" content="Fractional RevOps for early-stage SaaS founders. AI-native Go-To-Market motion design.">
 
   <style>
@@ -31,9 +34,10 @@
       --teal:      #00C2B3;
       --teal-dim:  #009E92;
       --white:     #FFFFFF;
-      --off-white: #F0F4F8;
+      --off-white: #F4F6FA;
       --muted:     #8DA0B8;
       --text:      #1A2740;
+      --slate:     #4A5568;
       --border:    rgba(0,194,179,0.18);
       --radius:    12px;
       --font:      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -53,7 +57,7 @@
       display:inline-block;
       font-size:.72rem;
       font-weight:700;
-      letter-spacing:.1em;
+      letter-spacing:.12em;
       text-transform:uppercase;
       color:var(--teal);
       border:1px solid var(--border);
@@ -65,7 +69,7 @@
     /* ─── Nav ────────────────────────────────────────────── */
     .nav {
       position:fixed; top:0; left:0; right:0; z-index:100;
-      background:rgba(5,14,33,0.92);
+      background:rgba(5,14,33,0.94);
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(0,194,179,0.1);
@@ -111,10 +115,11 @@
       background:radial-gradient(circle, rgba(0,194,179,0.04) 0%, transparent 70%);
       pointer-events:none;
     }
-    .hero-inner {
-      position:relative; z-index:1;
-      max-width:820px;
+    .hero-layout {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:3rem; align-items:center; position:relative; z-index:1;
     }
+    .hero-inner { max-width:820px; }
     .hero-eyebrow {
       font-size:.8rem; font-weight:700; letter-spacing:.14em;
       text-transform:uppercase; color:var(--teal);
@@ -122,75 +127,59 @@
     }
     .hero h1 {
       font-size:clamp(2.4rem, 5vw, 3.8rem);
-      font-weight:800;
-      line-height:1.1;
-      color:var(--white);
-      letter-spacing:-.03em;
+      font-weight:800; line-height:1.1;
+      color:var(--white); letter-spacing:-.03em;
       margin-bottom:1.6rem;
     }
-    .hero h1 em {
-      font-style:normal;
-      color:var(--teal);
-    }
+    .hero h1 em { font-style:normal; color:var(--teal); }
     .hero-sub {
-      font-size:1.15rem;
-      color:rgba(255,255,255,0.72);
-      max-width:600px;
-      margin-bottom:2.4rem;
-      line-height:1.7;
+      font-size:1.15rem; color:rgba(255,255,255,0.72);
+      max-width:600px; margin-bottom:2.4rem; line-height:1.7;
     }
     .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
     .btn-primary {
-      display:inline-block;
-      background:var(--teal); color:var(--navy);
-      font-weight:700; font-size:1rem;
-      padding:.85rem 2rem; border-radius:8px;
-      text-decoration:none;
-      transition:background .2s, transform .2s, box-shadow .2s;
+      display:inline-block; background:var(--teal); color:var(--navy);
+      font-weight:700; font-size:1rem; padding:.85rem 2rem; border-radius:8px;
+      text-decoration:none; transition:background .2s, transform .2s, box-shadow .2s;
       box-shadow:0 4px 20px rgba(0,194,179,0.3);
     }
     .btn-primary:hover { background:#00E0CE; transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,194,179,0.4); }
     .btn-ghost {
-      display:inline-block;
-      color:rgba(255,255,255,0.75);
-      font-weight:600; font-size:.95rem;
-      padding:.85rem 0;
-      text-decoration:none;
-      border-bottom:1px solid rgba(255,255,255,0.2);
+      display:inline-block; color:rgba(255,255,255,0.75);
+      font-weight:600; font-size:.95rem; padding:.85rem 0;
+      text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.2);
       transition:color .2s, border-color .2s;
     }
     .btn-ghost:hover { color:var(--teal); border-color:var(--teal); }
 
-    /* ─── Stat strip ─────────────────────────────────────── */
+    /* Hero illustration */
+    .hero-illustration { display:flex; justify-content:center; align-items:center; }
+    .hero-illustration svg { width:100%; max-width:420px; height:auto; }
+    @keyframes pulse-ring {
+      0%   { r:38; opacity:.6; }
+      50%  { r:46; opacity:.15; }
+      100% { r:38; opacity:.6; }
+    }
+    @keyframes dash-flow { to { stroke-dashoffset:-30; } }
+
+    /* ─── Stats strip ─────────────────────────────────────── */
     .stats {
       background:var(--navy-mid);
       border-top:1px solid rgba(0,194,179,0.12);
       border-bottom:1px solid rgba(0,194,179,0.12);
       padding:2rem 0;
     }
-    .stats-grid {
-      display:grid; grid-template-columns:repeat(3,1fr);
-      gap:0;
-    }
+    .stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; }
     .stat-item {
-      text-align:center;
-      padding:1rem 1.5rem;
+      text-align:center; padding:1rem 1.5rem;
       border-right:1px solid rgba(0,194,179,0.1);
     }
     .stat-item:last-child { border-right:none; }
     .stat-num {
-      font-size:2.2rem; font-weight:800;
-      color:var(--teal);
-      letter-spacing:-.04em;
-      line-height:1.1;
-      display:block;
+      font-size:2.2rem; font-weight:800; color:var(--teal);
+      letter-spacing:-.04em; line-height:1.1; display:block;
     }
-    .stat-label {
-      font-size:.82rem;
-      color:var(--muted);
-      margin-top:.3rem;
-      line-height:1.4;
-    }
+    .stat-label { font-size:.82rem; color:var(--muted); margin-top:.3rem; line-height:1.4; }
 
     /* ─── Section base ───────────────────────────────────── */
     section { padding:100px 0; }
@@ -199,102 +188,97 @@
     .section-header h2 {
       font-size:clamp(1.9rem, 3.5vw, 2.8rem);
       font-weight:800; letter-spacing:-.03em;
-      color:var(--text);
-      line-height:1.15;
+      color:var(--text); line-height:1.15;
     }
     .section-header p {
-      font-size:1.05rem; color:#4A5568;
-      margin-top:.9rem; max-width:580px;
-      line-height:1.7;
+      font-size:1.05rem; color:var(--slate);
+      margin-top:.9rem; max-width:580px; line-height:1.7;
     }
 
     /* ─── Problem section ────────────────────────────────── */
     .problem { background:var(--navy); padding:100px 0; }
     .problem .section-header h2 { color:var(--white); }
     .problem .section-header p { color:rgba(255,255,255,0.6); }
-    .problem-grid {
-      display:grid; grid-template-columns:repeat(2,1fr);
-      gap:1.5rem; margin-top:3rem;
-    }
+    .problem-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:3rem; }
     .problem-card {
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:var(--radius);
-      padding:1.75rem;
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      border-radius:var(--radius); padding:1.75rem;
       transition:border-color .2s, background .2s;
     }
-    .problem-card:hover {
-      border-color:rgba(0,194,179,0.3);
-      background:rgba(0,194,179,0.04);
-    }
-    .problem-card .icon {
-      font-size:1.4rem; margin-bottom:.8rem; display:block;
-    }
-    .problem-card h3 {
-      font-size:1rem; font-weight:700;
-      color:var(--white); margin-bottom:.5rem;
-    }
-    .problem-card p {
-      font-size:.9rem; color:rgba(255,255,255,0.55);
-      line-height:1.6;
-    }
+    .problem-card:hover { border-color:rgba(0,194,179,0.3); background:rgba(0,194,179,0.04); }
+    .problem-card .icon { display:block; margin-bottom:.9rem; width:28px; height:28px; }
+    .problem-card .icon svg { width:28px; height:28px; }
+    .problem-card h3 { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:.5rem; }
+    .problem-card p { font-size:.9rem; color:rgba(255,255,255,0.55); line-height:1.6; }
 
-    /* ─── Shift section ──────────────────────────────────── */
+    /* ─── Shift / comparison section ─────────────────────── */
     .shift-callout {
       background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-card) 100%);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:2.8rem 3rem;
-      margin-bottom:3rem;
+      border:1px solid var(--border); border-radius:var(--radius);
+      padding:2.8rem 3rem; margin-bottom:3rem;
       position:relative; overflow:hidden;
     }
     .shift-callout::before {
-      content:'';
-      position:absolute; top:-50%; right:-10%;
+      content:''; position:absolute; top:-50%; right:-10%;
       width:300px; height:300px;
       background:radial-gradient(circle, rgba(0,194,179,0.08) 0%, transparent 60%);
     }
     .shift-callout blockquote {
-      font-size:1.3rem; font-weight:600;
-      color:var(--white);
-      line-height:1.55;
-      position:relative; z-index:1;
-      font-style:italic;
+      font-size:1.3rem; font-weight:600; color:var(--white);
+      line-height:1.55; position:relative; z-index:1; font-style:italic;
     }
     .shift-callout blockquote::before {
-      content:'"';
-      font-size:4rem; line-height:.7;
-      color:var(--teal); opacity:.4;
-      display:block; margin-bottom:.3rem;
-      font-style:normal;
+      content:'"'; font-size:4rem; line-height:.7;
+      color:var(--teal); opacity:.4; display:block;
+      margin-bottom:.3rem; font-style:normal;
     }
+    .shift-compare {
+      display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;
+    }
+    .shift-col {
+      background: var(--off-white);
+      border:1px solid #E2E8F0;
+      border-radius:var(--radius); padding:1.75rem;
+    }
+    .shift-col.new { background:#050E21; border-color:rgba(0,194,179,0.3); }
+    .shift-col-label {
+      font-size:.72rem; font-weight:700; letter-spacing:.12em;
+      text-transform:uppercase; color:#6B7A99; margin-bottom:1rem;
+    }
+    .shift-col.new .shift-col-label { color:var(--teal); }
+    .shift-col ul { list-style:none; padding:0; }
+    .shift-col ul li {
+      font-size:.9rem; color:var(--slate);
+      padding:.45rem .75rem; background:white;
+      border-radius:6px; border:1px solid #E2E8F0;
+      margin-bottom:.5rem;
+      display:flex; align-items:center; gap:.5rem;
+    }
+    .shift-col ul li::before { content:'✕'; color:#C4CADA; font-size:.7rem; font-weight:700; flex-shrink:0; }
+    .shift-col.new ul li {
+      color:rgba(255,255,255,0.85);
+      background:rgba(255,255,255,0.06);
+      border-color:rgba(255,255,255,0.08);
+    }
+    .shift-col.new ul li::before { content:'✦'; color:var(--teal); font-size:.65rem; flex-shrink:0; }
 
     /* ─── Bowtie visual ──────────────────────────────────── */
     .bowtie-section { background:var(--navy); padding:100px 0; }
     .bowtie-section .section-header h2 { color:var(--white); }
     .bowtie-section .section-header p { color:rgba(255,255,255,0.6); }
-
     .bowtie-visual {
       display:flex; align-items:stretch;
-      gap:0; margin:3.5rem 0 2rem;
-      position:relative;
+      gap:0; margin:3.5rem 0 2rem; position:relative;
     }
-
-    /* Funnel left side */
-    .bowtie-side {
-      flex:1; display:flex; flex-direction:column; gap:.5rem;
-    }
+    .bowtie-side { flex:1; display:flex; flex-direction:column; gap:.5rem; }
     .bowtie-centre {
       display:flex; flex-direction:column;
       justify-content:center; align-items:center;
-      padding:0 1.5rem;
-      min-width:120px;
+      padding:0 1.5rem; min-width:120px;
     }
     .bowtie-dot {
-      width:14px; height:14px;
-      background:var(--teal);
-      border-radius:50%;
-      box-shadow:0 0 12px rgba(0,194,179,0.6);
+      width:14px; height:14px; background:var(--teal);
+      border-radius:50%; box-shadow:0 0 12px rgba(0,194,179,0.6);
     }
     .bowtie-line {
       width:2px; height:60px;
@@ -302,320 +286,278 @@
       margin:0 auto;
     }
     .bowtie-label {
-      font-size:.7rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase;
-      color:var(--teal); text-align:center;
-      margin-top:.5rem;
+      font-size:.7rem; font-weight:700; letter-spacing:.1em;
+      text-transform:uppercase; color:var(--teal); text-align:center; margin-top:.5rem;
     }
-
     .role-card {
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.07);
-      border-radius:10px;
-      padding:1.2rem 1.4rem;
-      transition:border-color .25s, background .25s, transform .25s;
-      cursor:default;
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07);
+      border-radius:10px; padding:1.2rem 1.4rem;
+      transition:border-color .25s, background .25s, transform .25s; cursor:default;
     }
-    .role-card:hover {
-      border-color:var(--teal);
-      background:rgba(0,194,179,0.06);
-      transform:translateX(4px);
-    }
+    .role-card:hover { border-color:var(--teal); background:rgba(0,194,179,0.06); transform:translateX(4px); }
     .bowtie-side.right .role-card:hover { transform:translateX(-4px); }
     .role-name {
-      font-size:.75rem; font-weight:700;
-      letter-spacing:.06em; text-transform:uppercase;
-      color:var(--teal); margin-bottom:.4rem;
+      font-size:.75rem; font-weight:700; letter-spacing:.06em;
+      text-transform:uppercase; color:var(--teal); margin-bottom:.4rem;
     }
     .role-old {
       font-size:.8rem; color:rgba(255,255,255,0.38);
-      text-decoration:line-through;
-      margin-bottom:.25rem;
-      line-height:1.4;
+      text-decoration:line-through; margin-bottom:.25rem; line-height:1.4;
     }
-    .role-new {
-      font-size:.85rem; color:rgba(255,255,255,0.88);
-      font-weight:500; line-height:1.45;
-    }
-
+    .role-new { font-size:.85rem; color:rgba(255,255,255,0.88); font-weight:500; line-height:1.45; }
     .bowtie-note {
-      text-align:center; margin-top:2rem;
-      font-size:.95rem;
+      text-align:center; margin-top:2rem; font-size:.95rem;
       color:rgba(255,255,255,0.55);
-      max-width:640px; margin-left:auto; margin-right:auto;
-      line-height:1.7;
+      max-width:640px; margin-left:auto; margin-right:auto; line-height:1.7;
     }
     .bowtie-note strong { color:var(--white); }
 
     /* ─── Plugin section ─────────────────────────────────── */
     .plugin-section { background:var(--off-white); }
-    .plugin-grid {
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:2rem; align-items:center;
-    }
+    .plugin-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; }
     .plugin-text h2 {
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      font-weight:800; letter-spacing:-.03em;
-      color:var(--text); margin-bottom:1rem;
-      line-height:1.15;
+      font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; letter-spacing:-.03em;
+      color:var(--text); margin-bottom:1rem; line-height:1.15;
     }
-    .plugin-text p {
-      font-size:1rem; color:#4A5568;
-      line-height:1.75; margin-bottom:1rem;
-    }
+    .plugin-text p { font-size:1rem; color:var(--slate); line-height:1.75; margin-bottom:1rem; }
     .plugin-text .highlight {
-      font-size:1.05rem; font-weight:600;
-      color:var(--navy); padding:1.1rem 1.4rem;
-      border-left:3px solid var(--teal);
-      background:rgba(0,194,179,0.06);
-      border-radius:0 8px 8px 0;
-      line-height:1.55;
-      margin:1.4rem 0;
+      font-size:1.05rem; font-weight:600; color:var(--navy);
+      padding:1.1rem 1.4rem; border-left:3px solid var(--teal);
+      background:rgba(0,194,179,0.06); border-radius:0 8px 8px 0;
+      line-height:1.55; margin:1.4rem 0;
     }
-
     .plugin-card {
-      background:var(--navy);
-      border-radius:var(--radius);
-      padding:2rem;
-      border:1px solid var(--border);
-      overflow:hidden;
-      position:relative;
+      background:var(--navy); border-radius:var(--radius);
+      padding:2rem; border:1px solid var(--border);
+      overflow:hidden; position:relative;
     }
     .plugin-card::before {
-      content:'';
-      position:absolute; top:-40%; right:-20%;
+      content:''; position:absolute; top:-40%; right:-20%;
       width:300px; height:300px;
       background:radial-gradient(circle, rgba(0,194,179,0.08) 0%, transparent 60%);
     }
     .plugin-row {
-      position:relative; z-index:1;
-      display:flex; align-items:flex-start;
-      gap:1rem; padding:.9rem 0;
-      border-bottom:1px solid rgba(255,255,255,0.06);
+      position:relative; z-index:1; display:flex; align-items:flex-start;
+      gap:1rem; padding:.9rem 0; border-bottom:1px solid rgba(255,255,255,0.06);
     }
     .plugin-row:last-child { border-bottom:none; }
-    .plugin-icon {
-      width:36px; height:36px; border-radius:8px;
-      background:rgba(0,194,179,0.12);
+    .svg-icon-inline {
+      width:38px; height:38px; border-radius:8px;
+      background:rgba(0,194,179,0.12); flex-shrink:0;
       display:flex; align-items:center; justify-content:center;
-      font-size:1rem; flex-shrink:0;
       border:1px solid rgba(0,194,179,0.2);
     }
-    .plugin-info {}
+    .svg-icon-inline svg { width:18px; height:18px; }
     .plugin-role { font-size:.75rem; font-weight:700; color:var(--teal); letter-spacing:.06em; text-transform:uppercase; margin-bottom:.25rem; }
     .plugin-desc { font-size:.85rem; color:rgba(255,255,255,0.7); line-height:1.5; }
 
-    /* ─── How I work ─────────────────────────────────────── */
-    .how-grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;
+    /* ─── Sales Agent section ────────────────────────────── */
+    .agent-section { background:var(--navy); padding:100px 0; }
+    .agent-section .section-header h2 { color:var(--white); }
+    .agent-section .section-header p { color:rgba(255,255,255,0.62); }
+    .agent-model-grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:2.5rem;
     }
+    .agent-model-card {
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1);
+      border-radius:var(--radius); padding:1.75rem;
+    }
+    .agent-model-card.primary { border-color:rgba(0,194,179,0.35); background:rgba(0,194,179,0.05); }
+    .agent-model-card.secondary { border-color:rgba(0,194,179,0.2); background:rgba(0,194,179,0.03); }
+    .agent-model-icon {
+      width:36px; height:36px; border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:.9rem;
+    }
+    .agent-model-card.primary .agent-model-icon { background:rgba(0,194,179,0.2); }
+    .agent-model-card.secondary .agent-model-icon { background:rgba(0,194,179,0.12); }
+    .agent-model-card:not(.primary):not(.secondary) .agent-model-icon { background:rgba(255,255,255,0.08); }
+    .agent-model-layer {
+      font-size:.68rem; font-weight:700; letter-spacing:.12em;
+      text-transform:uppercase; color:var(--teal); margin-bottom:.4rem;
+    }
+    .agent-model-card:not(.primary):not(.secondary) .agent-model-layer { color:rgba(255,255,255,0.4); }
+    .agent-model-name { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:.6rem; }
+    .agent-model-desc { font-size:.85rem; color:rgba(255,255,255,0.5); line-height:1.6; margin-bottom:.7rem; }
+    .agent-model-eg { font-size:.78rem; color:rgba(255,255,255,0.28); line-height:1.6; font-style:italic; }
+    .agent-compare {
+      display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2rem;
+    }
+    .agent-compare-box { border-radius:var(--radius); padding:1.75rem; }
+    .agent-compare-box.trad { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); }
+    .agent-compare-box.new { background:rgba(0,194,179,0.06); border:1px solid rgba(0,194,179,0.25); }
+    .agent-compare-label {
+      font-size:.68rem; font-weight:700; letter-spacing:.12em;
+      text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:.7rem;
+    }
+    .agent-compare-box.new .agent-compare-label { color:var(--teal); }
+    .agent-compare-headline { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:1rem; }
+    .agent-compare-stats { display:flex; gap:2rem; flex-wrap:wrap; }
+    .agent-stat-n {
+      font-size:1.6rem; font-weight:800; color:rgba(255,255,255,0.35);
+      letter-spacing:-.03em; display:block; line-height:1;
+    }
+    .agent-compare-box.new .agent-stat-n { color:var(--teal); }
+    .agent-stat-l { font-size:.72rem; color:rgba(255,255,255,0.35); margin-top:.25rem; }
+    .agent-note {
+      background:rgba(0,194,179,0.06); border:1px solid rgba(0,194,179,0.2);
+      border-radius:var(--radius); padding:1.5rem 2rem;
+      font-size:.95rem; color:rgba(255,255,255,0.62); line-height:1.65;
+      text-align:center; max-width:720px; margin:0 auto;
+    }
+    .agent-note strong { color:var(--teal); }
+
+    /* ─── How I work ─────────────────────────────────────── */
+    .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
     .how-card {
-      background:var(--white);
-      border:1px solid #E5E7EB;
-      border-radius:var(--radius);
-      padding:2rem;
-      position:relative;
+      background:var(--white); border:1px solid #E5E7EB;
+      border-radius:var(--radius); padding:2rem; position:relative;
     }
     .how-num {
-      font-size:3rem; font-weight:800;
-      color:rgba(0,194,179,0.15);
-      line-height:1; margin-bottom:.8rem;
-      letter-spacing:-.05em;
+      font-size:3rem; font-weight:800; color:rgba(0,194,179,0.15);
+      line-height:1; margin-bottom:.8rem; letter-spacing:-.05em;
     }
-    .how-card h3 {
-      font-size:1.05rem; font-weight:700;
-      color:var(--text); margin-bottom:.6rem;
-    }
-    .how-card p { font-size:.9rem; color:#4A5568; line-height:1.65; }
+    .how-card h3 { font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:.6rem; }
+    .how-card p { font-size:.9rem; color:var(--slate); line-height:1.65; }
 
     /* ─── Track record ───────────────────────────────────── */
     .track { background:var(--navy); padding:100px 0; }
     .track .section-header h2 { color:var(--white); }
     .track .section-header p  { color:rgba(255,255,255,0.6); }
-    .track-grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;
-    }
+    .track-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
     .track-card {
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:var(--radius);
-      padding:1.75rem;
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      border-radius:var(--radius); padding:1.75rem;
     }
     .track-company {
-      font-size:.72rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase;
-      color:var(--teal); margin-bottom:.5rem;
+      font-size:.72rem; font-weight:700; letter-spacing:.1em;
+      text-transform:uppercase; color:var(--teal); margin-bottom:.5rem;
     }
-    .track-role {
-      font-size:.9rem; font-weight:600;
-      color:var(--white); margin-bottom:.6rem;
-    }
-    .track-desc {
-      font-size:.85rem; color:rgba(255,255,255,0.5);
-      line-height:1.6;
-    }
+    .track-role { font-size:.9rem; font-weight:600; color:var(--white); margin-bottom:.6rem; }
+    .track-desc { font-size:.85rem; color:rgba(255,255,255,0.62); line-height:1.65; }
 
     /* ─── About ──────────────────────────────────────────── */
-    .about-grid {
-      display:grid; grid-template-columns:1fr 1.6fr; gap:4rem; align-items:start;
+    .about-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:4rem; align-items:start; }
+    .about-photo-wrap {
+      border-radius:var(--radius); overflow:hidden;
+      border:2px solid var(--border); aspect-ratio:4/5;
+      background:var(--navy-mid); position:relative;
     }
-    .about-avatar {
-      aspect-ratio:1; border-radius:var(--radius);
+    .about-photo-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
+    .about-photo-fallback {
+      display:none; flex-direction:column; align-items:center; justify-content:center;
+      height:100%; padding:2.5rem; text-align:center;
       background:linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-card) 100%);
-      border:1px solid var(--border);
-      display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
-      padding:2.5rem;
-      text-align:center;
-    }
-    .about-avatar .initials {
-      font-size:3.5rem; font-weight:800;
-      color:var(--teal); line-height:1;
-      letter-spacing:-.05em;
-    }
-    .about-avatar .name {
-      font-size:.95rem; font-weight:700;
-      color:var(--white); margin-top:.6rem;
-    }
-    .about-avatar .title {
-      font-size:.8rem; color:var(--muted); margin-top:.2rem;
     }
     .about-text h2 {
-      font-size:clamp(1.8rem,3vw,2.5rem);
-      font-weight:800; letter-spacing:-.03em;
-      color:var(--text); margin-bottom:1.2rem;
-      line-height:1.15;
+      font-size:clamp(1.8rem,3vw,2.5rem); font-weight:800; letter-spacing:-.03em;
+      color:var(--text); margin-bottom:1.2rem; line-height:1.15;
     }
-    .about-text p {
-      font-size:.98rem; color:#4A5568;
-      line-height:1.75; margin-bottom:1rem;
-    }
+    .about-text p { font-size:.98rem; color:var(--slate); line-height:1.75; margin-bottom:1rem; }
     .about-text p strong { color:var(--text); }
 
     /* ─── CTA section ────────────────────────────────────── */
-    .cta-section {
-      background:linear-gradient(135deg, var(--navy) 0%, #0A2050 100%);
-      padding:120px 0; text-align:center;
-    }
+    .cta-section { background:linear-gradient(135deg, var(--navy) 0%, #0A2050 100%); padding:120px 0; text-align:center; }
     .cta-section h2 {
-      font-size:clamp(2rem,4vw,3.2rem);
-      font-weight:800; letter-spacing:-.03em;
-      color:var(--white); line-height:1.15;
-      margin-bottom:1rem;
+      font-size:clamp(2rem,4vw,3.2rem); font-weight:800; letter-spacing:-.03em;
+      color:var(--white); line-height:1.15; margin-bottom:1rem;
     }
     .cta-section h2 em { font-style:normal; color:var(--teal); }
     .cta-section p {
       font-size:1.1rem; color:rgba(255,255,255,0.62);
-      max-width:500px; margin:0 auto 2.5rem;
-      line-height:1.7;
+      max-width:500px; margin:0 auto 2.5rem; line-height:1.7;
     }
 
-    /* ─── Contact form ───────────────────────────────────── */
+    /* ─── Contact section ────────────────────────────────── */
     .contact-section { padding:100px 0; background:var(--off-white); }
-    .contact-inner { max-width:680px; margin:0 auto; }
-    .contact-inner .section-header { text-align:center; }
-    .contact-inner .section-header h2 { font-size:2rem; }
+    .contact-section .section-header { text-align:center; max-width:560px; margin:0 auto 3.5rem; }
+    .contact-section .section-header h2 { font-size:2rem; color:var(--text); }
+    .contact-options {
+      display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; align-items:start;
+    }
+    .contact-option-label {
+      font-size:.72rem; font-weight:700; letter-spacing:.12em;
+      text-transform:uppercase; color:var(--teal); margin-bottom:.5rem;
+    }
+    .contact-option h3 { font-size:1.15rem; font-weight:700; color:var(--text); margin-bottom:.4rem; }
+    .contact-option > p { font-size:.9rem; color:#6B7280; margin-bottom:1.5rem; line-height:1.6; }
     .form-wrap {
-      background:var(--white);
-      border:1px solid #E5E7EB;
-      border-radius:var(--radius);
-      overflow:hidden;
-      margin-top:2.5rem;
-      box-shadow:0 4px 24px rgba(0,0,0,0.06);
+      background:var(--white); border:1px solid #E5E7EB; border-radius:var(--radius);
+      overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.06);
     }
-    .form-wrap iframe {
-      width:100%; border:none;
-      display:block; min-height:620px;
+    .form-wrap iframe { width:100%; border:none; display:block; min-height:560px; }
+    .calendly-card {
+      background:var(--navy); border:1px solid var(--border);
+      border-radius:var(--radius); padding:2.5rem 2rem;
+      text-align:center; position:relative; overflow:hidden;
     }
+    .calendly-card::before {
+      content:''; position:absolute; top:-40%; right:-20%;
+      width:280px; height:280px;
+      background:radial-gradient(circle, rgba(0,194,179,0.08) 0%, transparent 60%);
+    }
+    .calendly-card-inner { position:relative; z-index:1; }
+    .calendly-icon {
+      width:52px; height:52px; border-radius:12px;
+      background:rgba(0,194,179,0.15); border:1px solid rgba(0,194,179,0.3);
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 1.2rem;
+    }
+    .calendly-card h4 { font-size:1.15rem; font-weight:700; color:var(--white); margin-bottom:.6rem; }
+    .calendly-card p { font-size:.92rem; color:rgba(255,255,255,0.55); margin-bottom:1.75rem; line-height:1.65; }
+    .calendly-detail {
+      display:flex; flex-direction:column; gap:.6rem;
+      margin-bottom:2rem;
+    }
+    .calendly-detail-item {
+      display:flex; align-items:center; gap:.6rem;
+      font-size:.85rem; color:rgba(255,255,255,0.5);
+      justify-content:center;
+    }
+    .calendly-detail-item svg { opacity:.6; flex-shrink:0; }
+    .btn-calendly {
+      display:inline-block; background:var(--teal); color:var(--navy);
+      font-weight:700; font-size:1rem; padding:.85rem 2rem; border-radius:8px;
+      text-decoration:none; transition:background .2s, transform .2s;
+      box-shadow:0 4px 16px rgba(0,194,179,0.3);
+    }
+    .btn-calendly:hover { background:#00E0CE; transform:translateY(-2px); }
 
     /* ─── Footer ─────────────────────────────────────────── */
-    footer {
-      background:var(--navy);
-      border-top:1px solid rgba(0,194,179,0.1);
-      padding:2.5rem 0;
-    }
-    .footer-inner {
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .footer-logo {
-      font-size:1rem; font-weight:800;
-      color:var(--white); text-decoration:none;
-    }
+    footer { background:var(--navy); border-top:1px solid rgba(0,194,179,0.1); padding:2.5rem 0; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; }
+    .footer-logo { font-size:1rem; font-weight:800; color:var(--white); text-decoration:none; }
     .footer-logo span { color:var(--teal); }
-    .footer-copy {
-      font-size:.82rem; color:var(--muted);
-    }
-    .footer-link {
-      font-size:.82rem; color:var(--muted);
-      text-decoration:none; transition:color .2s;
-    }
+    .footer-copy { font-size:.82rem; color:var(--muted); }
+    .footer-link { font-size:.82rem; color:var(--muted); text-decoration:none; transition:color .2s; }
     .footer-link:hover { color:var(--teal); }
-
-    /* ─── Hero layout ────────────────────────────────────── */
-    .hero-layout {
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:3rem; align-items:center;
-    }
-    .hero-illustration { display:flex; justify-content:center; align-items:center; }
-    .hero-illustration svg { width:100%; max-width:420px; height:auto; }
-
-    /* ─── Node pulse animation ───────────────────────────── */
-    @keyframes pulse-ring {
-      0%   { r:38; opacity:.6; }
-      50%  { r:46; opacity:.15; }
-      100% { r:38; opacity:.6; }
-    }
-    @keyframes dash-flow {
-      to { stroke-dashoffset:-30; }
-    }
-
-    /* ─── SVG icon wrapper ───────────────────────────────── */
-    .svg-icon {
-      width:44px; height:44px; border-radius:10px;
-      display:flex; align-items:center; justify-content:center;
-      margin-bottom:.8rem; flex-shrink:0;
-    }
-    .svg-icon svg { width:22px; height:22px; }
-    .svg-icon-inline {
-      width:38px; height:38px; border-radius:8px;
-      background:rgba(0,194,179,0.12);
-      display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(0,194,179,0.2); flex-shrink:0;
-    }
-    .svg-icon-inline svg { width:18px; height:18px; }
-
-    /* ─── Photo slot ─────────────────────────────────────── */
-    .about-photo-wrap {
-      border-radius:var(--radius); overflow:hidden;
-      border:2px solid var(--border);
-      aspect-ratio:4/5; background:var(--navy-mid);
-      position:relative;
-    }
-    .about-photo-wrap img {
-      width:100%; height:100%; object-fit:cover; display:block;
-    }
 
     /* ─── Responsive ─────────────────────────────────────── */
     @media (max-width:900px) {
-      .hero-layout   { grid-template-columns:1fr; }
+      .hero-layout    { grid-template-columns:1fr; }
       .hero-illustration { display:none; }
-      .problem-grid  { grid-template-columns:1fr; }
-      .plugin-grid   { grid-template-columns:1fr; }
-      .how-grid      { grid-template-columns:1fr; }
-      .track-grid    { grid-template-columns:1fr 1fr; }
-      .about-grid    { grid-template-columns:1fr; }
-      .stats-grid    { grid-template-columns:1fr; }
-      .stat-item     { border-right:none; border-bottom:1px solid rgba(0,194,179,0.1); }
+      .problem-grid   { grid-template-columns:1fr; }
+      .shift-compare  { grid-template-columns:1fr; }
+      .plugin-grid    { grid-template-columns:1fr; }
+      .agent-model-grid { grid-template-columns:1fr 1fr; }
+      .agent-compare  { grid-template-columns:1fr; }
+      .how-grid       { grid-template-columns:1fr; }
+      .track-grid     { grid-template-columns:1fr 1fr; }
+      .about-grid     { grid-template-columns:1fr; }
+      .stats-grid     { grid-template-columns:1fr; }
+      .contact-options { grid-template-columns:1fr; }
+      .stat-item      { border-right:none; border-bottom:1px solid rgba(0,194,179,0.1); }
       .stat-item:last-child { border-bottom:none; }
-      .footer-inner  { flex-direction:column; gap:.75rem; text-align:center; }
+      .footer-inner   { flex-direction:column; gap:.75rem; text-align:center; }
     }
     @media (max-width:640px) {
       section { padding:72px 0; }
       .hero   { padding:130px 0 90px; }
       .track-grid { grid-template-columns:1fr; }
+      .agent-model-grid { grid-template-columns:1fr; }
       .bowtie-visual { flex-direction:column; }
       .bowtie-centre { display:none; }
-      .shift-compare { grid-template-columns:1fr !important; }
+      .cta-section { padding:80px 0; }
     }
   </style>
 </head>
@@ -639,14 +581,13 @@
       <div class="hero-inner">
         <p class="hero-eyebrow">Fractional RevOps Director &nbsp;·&nbsp; Early-Stage SaaS</p>
         <h1>Stop scaling<br>with <em>seats</em>.<br>Start scaling with<br><em>intelligence</em>.</h1>
-        <p class="hero-sub">Your Go-To-Market motion was probably built for 2020. I help early-stage SaaS founders redesign it for 2026 — with AI doing the heavy lifting and your people doing what only humans can do well.</p>
+        <p class="hero-sub">Your Go-To-Market motion was probably built for 2020. I help early-stage SaaS founders redesign it for 2030, with AI doing the heavy lifting and your people doing what only humans can do well.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Let's talk</a>
           <a href="#how" class="btn-ghost">How it works &rarr;</a>
         </div>
       </div>
 
-      <!-- Network illustration -->
       <div class="hero-illustration">
         <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
@@ -663,48 +604,29 @@
               <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-
-          <!-- Background radial glow -->
           <circle cx="210" cy="210" r="160" fill="url(#bgGlow)"/>
-
-          <!-- Animated pulse ring on centre -->
           <circle cx="210" cy="210" r="38" stroke="#00C2B3" stroke-width="1" opacity="0.4" style="animation:pulse-ring 2.8s ease-in-out infinite"/>
-
-          <!-- Connection lines — dashed, animated flow -->
           <line x1="75"  y1="95"  x2="210" y2="210" stroke="#00C2B3" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.35" style="animation:dash-flow 2s linear infinite"/>
           <line x1="58"  y1="210" x2="210" y2="210" stroke="#00C2B3" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.35" style="animation:dash-flow 2.4s linear infinite"/>
           <line x1="75"  y1="325" x2="210" y2="210" stroke="#00C2B3" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.35" style="animation:dash-flow 1.8s linear infinite"/>
           <line x1="345" y1="110" x2="210" y2="210" stroke="#00C2B3" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.25" style="animation:dash-flow 2.2s linear infinite reverse"/>
           <line x1="345" y1="310" x2="210" y2="210" stroke="#00C2B3" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.25" style="animation:dash-flow 2.6s linear infinite reverse"/>
-
-          <!-- Role nodes -->
-          <!-- Marketing -->
           <circle cx="75" cy="95" r="38" fill="#0A1A3A" stroke="#00C2B3" stroke-width="1.2" opacity="0.9" filter="url(#nodeGlow)"/>
           <text x="75" y="90" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="9.5" font-weight="600" font-family="system-ui,sans-serif">Marketing</text>
           <text x="75" y="104" text-anchor="middle" fill="#00C2B3" font-size="8" font-family="system-ui,sans-serif">Strategy</text>
-
-          <!-- SDR -->
           <circle cx="52" cy="210" r="38" fill="#0A1A3A" stroke="#00C2B3" stroke-width="1.2" opacity="0.9" filter="url(#nodeGlow)"/>
           <text x="52" y="205" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="9.5" font-weight="600" font-family="system-ui,sans-serif">SDR/BDR</text>
           <text x="52" y="219" text-anchor="middle" fill="#00C2B3" font-size="8" font-family="system-ui,sans-serif">Pipeline</text>
-
-          <!-- AE -->
           <circle cx="75" cy="325" r="38" fill="#0A1A3A" stroke="#00C2B3" stroke-width="1.2" opacity="0.9" filter="url(#nodeGlow)"/>
           <text x="75" y="320" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="9.5" font-weight="600" font-family="system-ui,sans-serif">AE / Sales</text>
           <text x="75" y="334" text-anchor="middle" fill="#00C2B3" font-size="8" font-family="system-ui,sans-serif">Close</text>
-
-          <!-- RevOps -->
           <circle cx="345" cy="110" r="38" fill="#0A1A3A" stroke="#00C2B3" stroke-width="1.2" opacity="0.9" filter="url(#nodeGlow)"/>
           <text x="345" y="105" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="9.5" font-weight="600" font-family="system-ui,sans-serif">RevOps</text>
           <text x="345" y="119" text-anchor="middle" fill="#00C2B3" font-size="8" font-family="system-ui,sans-serif">System</text>
-
-          <!-- CS -->
           <circle cx="345" cy="310" r="38" fill="#0A1A3A" stroke="#00C2B3" stroke-width="1.2" opacity="0.9" filter="url(#nodeGlow)"/>
           <text x="345" y="305" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="9.5" font-weight="600" font-family="system-ui,sans-serif">Customer</text>
           <text x="345" y="318" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="9.5" font-weight="600" font-family="system-ui,sans-serif">Success</text>
           <text x="345" y="332" text-anchor="middle" fill="#00C2B3" font-size="8" font-family="system-ui,sans-serif">Retention</text>
-
-          <!-- Centre — Intelligence node -->
           <circle cx="210" cy="210" r="44" fill="#050E21" stroke="#00C2B3" stroke-width="2" filter="url(#centreGlow)"/>
           <circle cx="210" cy="210" r="34" fill="rgba(0,194,179,0.08)"/>
           <text x="210" y="205" text-anchor="middle" fill="#00C2B3" font-size="11" font-weight="800" letter-spacing="1.5" font-family="system-ui,sans-serif">AI</text>
@@ -725,12 +647,12 @@
         <span class="stat-label">Years building<br>B2B SaaS revenue motions</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">£2M–£8M</span>
-        <span class="stat-label">ARR — the stage where your<br>Go-To-Market motion usually breaks</span>
+        <span class="stat-num">£2M&ndash;£8M</span>
+        <span class="stat-label">ARR: the stage where your<br>Go-To-Market motion usually breaks</span>
       </div>
       <div class="stat-item">
         <span class="stat-num">Fractional</span>
-        <span class="stat-label">Senior, embedded, accountable —<br>without the full-time cost</span>
+        <span class="stat-label">Senior, embedded, accountable,<br>without the full-time cost</span>
       </div>
     </div>
   </div>
@@ -742,36 +664,28 @@
     <div class="section-header">
       <span class="tag">Sound familiar?</span>
       <h2 style="color:var(--white)">The signs your Go-To-Market motion<br>is starting to crack</h2>
-      <p>Most founders hit these walls between £2M and £8M ARR. They're not signs of failure — they're signs of growth outpacing your operating model.</p>
+      <p style="color:rgba(255,255,255,0.6)">Most founders hit these walls between £2M and £8M ARR. They are not signs of failure. They are signs of growth outpacing your operating model.</p>
     </div>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="svg-icon" style="background:rgba(0,194,179,0.1);border:1px solid rgba(0,194,179,0.2);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-        </div>
-        <h3>Pipeline inconsistency</h3>
-        <p>Some months are great, others aren't — and no one really knows why. You're still running on founder energy, not system.</p>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+        <h3>Revenue is unpredictable</h3>
+        <p>Some months are great, others are not, and no one really knows why. You are still running on founder energy, not system.</p>
       </div>
       <div class="problem-card">
-        <div class="svg-icon" style="background:rgba(0,194,179,0.1);border:1px solid rgba(0,194,179,0.2);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <h3>Founder dependency</h3>
-        <p>Deals still need you to close. The team can't replicate what you do. You're a bottleneck in your own revenue motion.</p>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg></span>
+        <h3>Every new hire restarts the learning curve</h3>
+        <p>Onboarding takes months. The playbook lives in people's heads. When someone leaves, so does the knowledge.</p>
       </div>
       <div class="problem-card">
-        <div class="svg-icon" style="background:rgba(0,194,179,0.1);border:1px solid rgba(0,194,179,0.2);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-        </div>
-        <h3>No single source of truth</h3>
-        <p>Data is scattered across tools. Decisions get made on gut feeling, not signal. Forecasting is optimism dressed as analysis.</p>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+        <h3>Your CRM is a graveyard</h3>
+        <p>Data quality is low, forecasts are guesswork, and no one trusts the numbers. Decisions get made on instinct because the data does not support anything better.</p>
       </div>
       <div class="problem-card">
-        <div class="svg-icon" style="background:rgba(0,194,179,0.1);border:1px solid rgba(0,194,179,0.2);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>The headcount trap</h3>
-        <p>The instinct is to hire more people. But more people don't fix a broken system — they amplify the problem and multiply the cost.</p>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="23" y2="11"/><line x1="19" y1="11" x2="23" y2="11"/><path d="M19 8a3 3 0 0 1 0 6"/></svg></span>
+        <h3>You have hit a headcount ceiling</h3>
+        <p>The instinct is to hire more people. But more people do not fix a broken system. They amplify the problem and multiply the cost.</p>
       </div>
     </div>
   </div>
@@ -782,155 +696,211 @@
   <div class="container">
     <div class="section-header">
       <span class="tag">The shift</span>
-      <h2>There's a better way<br>to build your Go-To-Market motion now</h2>
-      <p>The companies that figure out AI-native Go-To-Market in the next 18 months won't just grow faster — they'll permanently change what it costs to compete.</p>
+      <h2>The GTM model is changing.<br>Most teams are still building the old one.</h2>
+      <p>The companies that move to an AI-native Go-To-Market motion in the next 18 months will not just grow faster. They will permanently change what it costs to compete.</p>
     </div>
     <div class="shift-callout">
-      <blockquote>
-        This isn't about adding AI features to an existing process. It's about rethinking what your Go-To-Market motion looks like when AI is doing the routine work — and your people are doing what they're actually best at.
-      </blockquote>
+      <blockquote>This is not about adding AI features to an existing process. It is about rethinking what your Go-To-Market motion looks like when AI is doing the routine work, and your people are doing what they are actually best at.</blockquote>
     </div>
-    <div class="shift-compare" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
-      <div style="background:var(--off-white); border-radius:var(--radius); padding:2rem; border:1px solid #E5E7EB;">
-        <p style="font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#9CA3AF; margin-bottom:1rem;">Old model — 2020</p>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:.6rem;">
-          <li style="font-size:.9rem; color:#6B7280; padding:.5rem .75rem; background:#F9FAFB; border-radius:6px; border:1px solid #E5E7EB;">—More headcount = more output</li>
-          <li style="font-size:.9rem; color:#6B7280; padding:.5rem .75rem; background:#F9FAFB; border-radius:6px; border:1px solid #E5E7EB;">—Playbooks live in people's heads</li>
-          <li style="font-size:.9rem; color:#6B7280; padding:.5rem .75rem; background:#F9FAFB; border-radius:6px; border:1px solid #E5E7EB;">—Onboarding takes months</li>
-          <li style="font-size:.9rem; color:#6B7280; padding:.5rem .75rem; background:#F9FAFB; border-radius:6px; border:1px solid #E5E7EB;">—Reps doing admin, not selling</li>
-          <li style="font-size:.9rem; color:#6B7280; padding:.5rem .75rem; background:#F9FAFB; border-radius:6px; border:1px solid #E5E7EB;">—Founder as the system</li>
+    <div class="shift-compare">
+      <div class="shift-col">
+        <div class="shift-col-label">Old Model — 2020</div>
+        <ul>
+          <li>More headcount = more output</li>
+          <li>Playbooks live in people's heads</li>
+          <li>Onboarding takes months</li>
+          <li>AEs doing admin, not selling</li>
+          <li>Founder as the system</li>
         </ul>
       </div>
-      <div style="background:var(--navy-mid); border-radius:var(--radius); padding:2rem; border:1px solid var(--border);">
-        <p style="font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); margin-bottom:1rem;">New model — 2026</p>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:.6rem;">
-          <li style="font-size:.9rem; color:rgba(255,255,255,0.82); padding:.5rem .75rem; background:rgba(0,194,179,0.07); border-radius:6px; border:1px solid rgba(0,194,179,0.2);">✦Intelligence scales, headcount doesn't have to</li>
-          <li style="font-size:.9rem; color:rgba(255,255,255,0.82); padding:.5rem .75rem; background:rgba(0,194,179,0.07); border-radius:6px; border:1px solid rgba(0,194,179,0.2);">✦Playbooks installed as AI instruction files</li>
-          <li style="font-size:.9rem; color:rgba(255,255,255,0.82); padding:.5rem .75rem; background:rgba(0,194,179,0.07); border-radius:6px; border:1px solid rgba(0,194,179,0.2);">✦New hires work at standard from day one</li>
-          <li style="font-size:.9rem; color:rgba(255,255,255,0.82); padding:.5rem .75rem; background:rgba(0,194,179,0.07); border-radius:6px; border:1px solid rgba(0,194,179,0.2);">✦AI handles admin, humans handle judgment</li>
-          <li style="font-size:.9rem; color:rgba(255,255,255,0.82); padding:.5rem .75rem; background:rgba(0,194,179,0.07); border-radius:6px; border:1px solid rgba(0,194,179,0.2);">✦System scales independently of founder</li>
+      <div class="shift-col new">
+        <div class="shift-col-label">New Model — 2030</div>
+        <ul>
+          <li>One AE, one agent, multiple territories</li>
+          <li>Playbooks installed as agent instructions</li>
+          <li>New hires productive from day one</li>
+          <li>AEs focused entirely on selling</li>
+          <li>Process as the system</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── GTM Bowtie ─────────────────────────────────────────── -->
+<!-- ── Bowtie ────────────────────────────────────────────── -->
 <section class="bowtie-section" id="gtm">
   <div class="container">
     <div class="section-header">
-      <span class="tag">The Go-To-Market Bowtie</span>
-      <h2 style="color:var(--white)">Every role shifts.<br>Every function improves.</h2>
-      <p>AI doesn't replace the team. It handles the routine so your people can focus on the work that actually requires a human.</p>
+      <span class="tag">The full revenue motion</span>
+      <h2 style="color:var(--white)">Every role in your GTM motion,<br>reimagined with an intelligence foundation</h2>
+      <p style="color:rgba(255,255,255,0.6)">AI does not replace your team. It removes the work that was preventing them from doing their actual job well.</p>
     </div>
-
     <div class="bowtie-visual">
-      <!-- Left: demand side -->
       <div class="bowtie-side left">
         <div class="role-card">
           <div class="role-name">Marketing</div>
-          <div class="role-old">Producing content, managing campaigns, pulling reports</div>
-          <div class="role-new">Sets strategy &amp; message. AI generates, tests, and distributes at scale.</div>
+          <div class="role-old">Campaign creation by hand, slow iteration</div>
+          <div class="role-new">AI generates and tests content variants. You set the strategy.</div>
         </div>
         <div class="role-card">
           <div class="role-name">SDR / BDR</div>
-          <div class="role-old">Manual research, writing sequences, volume prospecting</div>
-          <div class="role-new">Defines ICP and message. AI researches, personalises, and follows up.</div>
+          <div class="role-old">Hours on research, generic outreach</div>
+          <div class="role-new">Agent handles research and first-draft outreach. SDR focuses on connection.</div>
         </div>
         <div class="role-card">
           <div class="role-name">AE / Sales</div>
-          <div class="role-old">Admin, note-taking, CRM updates, writing follow-ups</div>
-          <div class="role-new">Runs high-value conversations. AI handles documentation and next steps.</div>
+          <div class="role-old">Admin eating 40-50% of the day</div>
+          <div class="role-new">Agent handles prep, notes and CRM. AE focuses on discovery and closing.</div>
         </div>
       </div>
-
-      <!-- Centre node -->
       <div class="bowtie-centre">
         <div class="bowtie-dot"></div>
         <div class="bowtie-line"></div>
-        <div style="background:var(--teal); color:var(--navy); font-size:.65rem; font-weight:800; padding:.3rem .6rem; border-radius:4px; text-align:center; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap;">Revenue</div>
+        <div class="bowtie-label">AI<br>Layer</div>
         <div class="bowtie-line"></div>
         <div class="bowtie-dot"></div>
       </div>
-
-      <!-- Right: retention side -->
       <div class="bowtie-side right">
         <div class="role-card">
           <div class="role-name">RevOps</div>
-          <div class="role-old">Data cleaning, report building, chasing CRM updates</div>
-          <div class="role-new">Designs the system. AI surfaces signals and flags risks in real time.</div>
+          <div class="role-old">Manual reporting, reactive data work</div>
+          <div class="role-new">AI surfaces signals before they become problems. RevOps focuses on architecture.</div>
         </div>
         <div class="role-card">
           <div class="role-name">Customer Success</div>
-          <div class="role-old">Manual health checks, chasing data, building decks</div>
-          <div class="role-new">Focuses on strategic relationships. AI monitors health and preps the brief.</div>
+          <div class="role-old">Reactive to churn, QBRs done manually</div>
+          <div class="role-new">Agent monitors health signals and flags risk. CS focuses on expansion.</div>
         </div>
         <div class="role-card">
           <div class="role-name">Leadership</div>
-          <div class="role-old">Setting direction between board updates, firefighting in between</div>
-          <div class="role-new">Sets context and steers. AI executes within the framework.</div>
+          <div class="role-old">Decisions based on instinct and lagging data</div>
+          <div class="role-new">Real-time pipeline intelligence. Forecast built on data, not optimism.</div>
         </div>
       </div>
     </div>
-
-    <p class="bowtie-note">
-      <strong>Informed by humans. Steered by humans. Executed by AI agents with best-in-class discipline.</strong><br>
-      Everyone doing what you'd want them to ideally do — consistently, at scale.
-    </p>
+    <p class="bowtie-note"><strong>Everyone doing what you would want them to do,</strong> consistently, at scale.</p>
   </div>
 </section>
 
-<!-- ── Plugin ─────────────────────────────────────────────── -->
+<!-- ── Playbook as Plugin ─────────────────────────────────── -->
 <section class="plugin-section" id="how">
   <div class="container">
     <div class="plugin-grid">
       <div class="plugin-text">
         <span class="tag">The playbook as a plugin</span>
         <h2>Your framework.<br>Installed on<br>every agent.</h2>
-        <p>The playbooks I build don't sit in a document. They get packaged as instruction files — installed into the AI agents your team already uses.</p>
+        <p>The playbooks do not sit in a document. They get packaged as instruction files, installed into AI agents your team already uses.</p>
         <div class="highlight">
           Knowledge that takes months of coaching to transmit is now an instruction file that works from the first draft.
         </div>
-        <p>Every new SDR prospects using your framework from their first sequence. Every AE starts discovery from the right baseline. The standard doesn't depend on tenure or memory — it's installed.</p>
+        <p>Every new SDR prospects using your framework from their first sequence. Every AE starts discovery from the right baseline. The standard does not depend on tenure or memory. It is installed.</p>
       </div>
       <div class="plugin-card">
         <div class="plugin-row">
           <div class="svg-icon-inline">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           </div>
-          <div class="plugin-info">
+          <div>
             <div class="plugin-role">SDR Playbook</div>
-            <div class="plugin-desc">ICP definition, personalisation framework, objection handling, qualification criteria — installed as an AI agent instruction set.</div>
+            <div class="plugin-desc">ICP definition, personalisation framework, objection handling, qualification criteria, installed as an AI agent instruction set.</div>
           </div>
         </div>
         <div class="plugin-row">
           <div class="svg-icon-inline">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <div class="plugin-info">
+          <div>
             <div class="plugin-role">AE Discovery Framework</div>
-            <div class="plugin-desc">Discovery methodology, deal qualification, proposal logic, follow-up structure — AI works from your process, not a generic one.</div>
+            <div class="plugin-desc">Discovery methodology, deal qualification, proposal logic, follow-up structure. AI works from your process, not a generic one.</div>
           </div>
         </div>
         <div class="plugin-row">
           <div class="svg-icon-inline">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
-          <div class="plugin-info">
+          <div>
             <div class="plugin-role">CS Health Scoring</div>
-            <div class="plugin-desc">Health signals, risk thresholds, QBR prep, expansion triggers — automated monitoring against your definitions of good.</div>
+            <div class="plugin-desc">Health signals, risk thresholds, QBR prep, expansion triggers. Automated monitoring against your definitions of good.</div>
           </div>
         </div>
         <div class="plugin-row">
           <div class="svg-icon-inline">
             <svg viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </div>
-          <div class="plugin-info">
+          <div>
             <div class="plugin-role">RevOps Signal Logic</div>
-            <div class="plugin-desc">Pipeline health, forecast rules, data quality standards — AI surfaces what matters before it becomes a problem.</div>
+            <div class="plugin-desc">Pipeline health, forecast rules, data quality standards. AI surfaces what matters before it becomes a problem.</div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Sales Agent ────────────────────────────────────────── -->
+<section class="agent-section" id="agent">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">The Sales Agent Model</span>
+      <h2 style="color:var(--white)">One AE, one agent,<br><em style="font-style:normal;color:var(--teal)">multiple territories.</em></h2>
+      <p>Your sales process, packaged as an AI agent. It handles everything systematic. Your AE focuses on what only a human can do well. The result is one person with the reach of two.</p>
+    </div>
+
+    <!-- Instructions / Skills / Plugins -->
+    <div class="agent-model-grid">
+      <div class="agent-model-card primary">
+        <div class="agent-model-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="agent-model-layer">Layer 1</div>
+        <div class="agent-model-name">Instructions</div>
+        <div class="agent-model-desc">You define how the agent operates. Your brand &amp; tone, your ICP, your messaging, your process. RevOptimise builds this with you first. This is what makes the agent yours, not generic.</div>
+        <div class="agent-model-eg">Who to target. How to approach them. What good looks like at every stage.</div>
+      </div>
+      <div class="agent-model-card secondary">
+        <div class="agent-model-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="agent-model-layer">Layer 2</div>
+        <div class="agent-model-name">Skills</div>
+        <div class="agent-model-desc">What the agent can do. Research a prospect. Draft a personalised email. Summarise a call. Write a meeting brief. Each skill runs from your instructions, not a template.</div>
+        <div class="agent-model-eg">Research. Write. Summarise. Brief. Follow up. Update.</div>
+      </div>
+      <div class="agent-model-card">
+        <div class="agent-model-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <div class="agent-model-layer">Layer 3</div>
+        <div class="agent-model-name">Plugins</div>
+        <div class="agent-model-desc">What the agent connects to. Your CRM, your calendar, your email, your enrichment tools. The agent does not just draft. It acts.</div>
+        <div class="agent-model-eg">CRM. Calendar. Email. Enrichment. Sequencing tools.</div>
+      </div>
+    </div>
+
+    <!-- Before / After -->
+    <div class="agent-compare">
+      <div class="agent-compare-box trad">
+        <div class="agent-compare-label">Traditional</div>
+        <div class="agent-compare-headline">One AE. One territory.</div>
+        <div class="agent-compare-stats">
+          <div><span class="agent-stat-n">1x</span><div class="agent-stat-l">territory coverage</div></div>
+          <div><span class="agent-stat-n">~200</span><div class="agent-stat-l">accounts reachable</div></div>
+          <div><span class="agent-stat-n">40-50%</span><div class="agent-stat-l">of day on admin</div></div>
+        </div>
+      </div>
+      <div class="agent-compare-box new">
+        <div class="agent-compare-label">New Model: 2030</div>
+        <div class="agent-compare-headline">One AE, one agent, multiple territories.</div>
+        <div class="agent-compare-stats">
+          <div><span class="agent-stat-n">2x</span><div class="agent-stat-l">territory coverage</div></div>
+          <div><span class="agent-stat-n">~400</span><div class="agent-stat-l">accounts reachable</div></div>
+          <div><span class="agent-stat-n">&lt;10%</span><div class="agent-stat-l">of day on admin</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="agent-note">
+      <strong>Buildable today.</strong> This model runs inside Claude or ChatGPT right now. The technology is not the missing piece. The configuration is. That is what RevOptimise builds with you.
     </div>
   </div>
 </section>
@@ -941,29 +911,29 @@
     <div class="section-header">
       <span class="tag">How it works</span>
       <h2>Embedded, not advisory</h2>
-      <p>I work alongside your leadership team — in the business, not at arm's length. Here's how an engagement typically runs.</p>
+      <p>I work alongside your leadership team, in the business, not at arm's length. Here is how an engagement typically runs.</p>
     </div>
     <div class="how-grid">
       <div class="how-card">
         <div class="how-num">01</div>
         <h3>Diagnostic</h3>
-        <p>We map the full revenue motion — where it's working, where it's leaking, and what the highest-leverage fix is. You get a clear picture before committing to anything.</p>
+        <p>We map the full revenue motion: where it is working, where it is leaking, and what the highest-impact fix is. You get a clear picture before committing to anything.</p>
       </div>
       <div class="how-card">
         <div class="how-num">02</div>
         <h3>Build</h3>
-        <p>I design and implement the systems, playbooks, and AI architecture. Not slides — working infrastructure your team can run from day one.</p>
+        <p>I design and implement the systems, playbooks and AI architecture. Not slides. Working infrastructure your team can run from day one.</p>
       </div>
       <div class="how-card">
         <div class="how-num">03</div>
-        <h3>Embed &amp; scale</h3>
-        <p>We install the playbooks into your AI agents, train the team, and hand over a motion that scales independently — without needing me in the room.</p>
+        <h3>Embed and scale</h3>
+        <p>We install the playbooks into your AI agents, train the team, and hand over a motion that scales independently, without needing me in the room.</p>
       </div>
     </div>
     <div style="margin-top:3rem; background:var(--white); border:1px solid #E5E7EB; border-radius:var(--radius); padding:2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;">
       <div>
         <p style="font-size:1rem; font-weight:700; color:var(--text); margin-bottom:.25rem;">Flexible by design. We scope the engagement around what you actually need.</p>
-        <p style="font-size:.9rem; color:#6B7280;">Initial diagnostic included — you know exactly what you're getting before we start.</p>
+        <p style="font-size:.9rem; color:#6B7280;">Initial diagnostic included. You know exactly what you are getting before we start.</p>
       </div>
       <a href="#contact" class="btn-primary" style="white-space:nowrap; background:var(--navy); color:var(--white); box-shadow:none;">Get in touch &rarr;</a>
     </div>
@@ -976,38 +946,38 @@
     <div class="section-header">
       <span class="tag">Track record</span>
       <h2 style="color:var(--white)">Senior experience<br>across the spectrum</h2>
-      <p>20+ years building and fixing revenue motions in B2B SaaS — from early stage through enterprise. I've seen what works and what doesn't.</p>
+      <p style="color:rgba(255,255,255,0.6)">20+ years building and fixing revenue motions in B2B SaaS, from early stage through enterprise. I have seen what works and what does not.</p>
     </div>
     <div class="track-grid">
       <div class="track-card">
         <div class="track-company">LegalFly</div>
         <div class="track-role">Fractional RevOps Director</div>
-        <div class="track-desc">Designed early-stage Go-To-Market architecture with AI woven through the revenue motion from the ground up.</div>
+        <div class="track-desc">Embedded directly into the founding team. Built the FY25 GTM from the ground up: ICP definition, quota design, HubSpot architecture, forecasting methodology and AI-native operating model. This is what a RevOptimise engagement looks like in practice.</div>
       </div>
       <div class="track-card">
         <div class="track-company">Natterbox</div>
         <div class="track-role">RevOps Director</div>
-        <div class="track-desc">Built the full revenue operations function — systems, playbooks, and data infrastructure for scale.</div>
+        <div class="track-desc">Joined a new CRO to build a RevOps function from zero. Complete FY24 GTM plan covering organisation design, quota setting, commission plan, operational cadences, forecasting methodology and systems. Time-to-Renew reduced by 2x. Average contract length extended by 30%.</div>
       </div>
       <div class="track-card">
         <div class="track-company">UPP.ai</div>
         <div class="track-role">Interim VP Sales</div>
-        <div class="track-desc">Took the commercial lead during a critical growth phase, building pipeline and team capability.</div>
+        <div class="track-desc">Stepped in as commercial lead post-investment to rebuild the GTM organisation. Redesigned processes, standardised the CRM, recruited and onboarded the sales and CS teams. Delivered 3x growth in average customer value, consecutive record ARR quarters, and a $10M seed round secured in June 2023.</div>
       </div>
       <div class="track-card">
         <div class="track-company">Vodafone Business</div>
-        <div class="track-role">Senior Commercial</div>
-        <div class="track-desc">Enterprise Go-To-Market experience at scale — programmes, process, and large team coordination.</div>
+        <div class="track-role">Head of Commercial Operations</div>
+        <div class="track-desc">Led commercial operations and sales engineering for Vodafone Business UK. Deployed Salesforce Einstein AI for account whitespace analysis and Celonis process mining across the lead-to-order flow. Reduced sales admin time by more than 50% and cut query volume by 80%. Early proof that AI-augmented sales ops works at enterprise scale.</div>
       </div>
       <div class="track-card">
         <div class="track-company">Symantec / MessageLabs</div>
-        <div class="track-role">Commercial Leadership</div>
-        <div class="track-desc">Revenue leadership through rapid growth and acquisition — built for resilience and repeatability.</div>
+        <div class="track-role">Director, Global Sales Operations</div>
+        <div class="track-desc">Fourteen years at MessageLabs, through its acquisition by Symantec in 2008. Built and led global sales operations through rapid growth, worldwide expansion and post-acquisition integration. Scaled headcount while increasing per-capita revenue. Delivered 30% gross margin improvement across the SaaS portfolio within 12 months.</div>
       </div>
       <div class="track-card">
         <div class="track-company">Bizagi &amp; ZPG</div>
-        <div class="track-role">Commercial Roles</div>
-        <div class="track-desc">Cross-sector SaaS experience — from enterprise software to marketplace-led revenue models.</div>
+        <div class="track-role">Commercial Operations</div>
+        <div class="track-desc">At Bizagi (process automation software), built worldwide sales operations and a Customer Data Platform for ABM, improving marketing ROI while reducing platform costs. At ZPG (now Zoopla), hired post-IPO to build enterprise-grade commercial operations. Doubled lead volume and delivered a 10-point NPS gain within 6 months.</div>
       </div>
     </div>
   </div>
@@ -1018,11 +988,9 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-photo-wrap">
-        <!-- Replace src with your photo path once uploaded, e.g. src="jono.jpg" -->
-        <img src="jono.jpg" alt="Jono Pank — Founder, RevOptimise"
+        <img src="jono.jpg" alt="Jono Pank, Founder, RevOptimise"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <!-- Fallback if photo not yet added -->
-        <div style="display:none;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:2rem;text-align:center;background:var(--navy-mid);">
+        <div class="about-photo-fallback">
           <div style="font-size:4rem;font-weight:800;color:var(--teal);letter-spacing:-.05em;line-height:1;">JP</div>
           <div style="font-size:1rem;font-weight:700;color:var(--white);margin-top:.6rem;">Jono Pank</div>
           <div style="font-size:.85rem;color:var(--muted);margin-top:.2rem;">Founder, RevOptimise</div>
@@ -1030,10 +998,10 @@
       </div>
       <div class="about-text">
         <span class="tag">About</span>
-        <h2>I've spent 20 years in the engine room of B2B SaaS revenue.</h2>
-        <p>I know what a high-performing Go-To-Market motion looks like. I know where it breaks. And I know how to build one that scales — without just throwing more people at it.</p>
-        <p>I've been using AI tools since they first arrived. But what's different now isn't the tools — it's what's possible architecturally. There's a way to embed AI on a foundational level, not bolted on after the fact, but as the operating model itself. I've built this in practice during fractional engagements, and I've seen first-hand what it changes.</p>
-        <p><strong>RevOptimise is the vehicle for bringing that to early-stage founders</strong> — the ones who are ready to build a Go-To-Market motion that works for 2026, not one that's held together with spreadsheets and optimism.</p>
+        <h2>I have spent 20 years in the engine room of B2B SaaS revenue.</h2>
+        <p>I know what a high-performing Go-To-Market motion looks like. I know where it breaks. And I know how to build one that scales, without just throwing more people at it.</p>
+        <p>I have been using AI tools since they first arrived. But what is different now is not the tools. It is what is possible architecturally. There is a way to embed AI at a foundational level, not bolted on after the fact, but as the operating model itself. I have built this in practice during fractional engagements and seen first-hand what it changes.</p>
+        <p><strong>RevOptimise is the vehicle for bringing that to early-stage founders:</strong> the ones who are ready to build a Go-To-Market motion that works for 2030, not one held together with spreadsheets and optimism.</p>
       </div>
     </div>
   </div>
@@ -1042,7 +1010,7 @@
 <!-- ── CTA ────────────────────────────────────────────────── -->
 <section class="cta-section">
   <div class="container">
-    <h2>Ready to build your<br>Go-To-Market motion for <em>2026</em>?</h2>
+    <h2>Ready to build your<br>Go-To-Market motion for <em>2030</em>?</h2>
     <p>No pitch deck. No vague proposals. A direct conversation about where you are and whether I can help.</p>
     <a href="#contact" class="btn-primary" style="font-size:1.05rem; padding:1rem 2.5rem;">Let's talk &rarr;</a>
   </div>
@@ -1051,22 +1019,54 @@
 <!-- ── Contact ────────────────────────────────────────────── -->
 <section class="contact-section" id="contact">
   <div class="container">
-    <div class="contact-inner">
-      <div class="section-header">
-        <span class="tag">Get in touch</span>
-        <h2>Start the conversation</h2>
-        <p style="color:#4A5568; margin-top:.6rem;">Tell me where you are. I'll be straight with you about whether RevOptimise is the right fit.</p>
+    <div class="section-header">
+      <span class="tag">Get in touch</span>
+      <h2>Start the conversation</h2>
+      <p>Tell me where you are. I will be straight with you about whether RevOptimise is the right fit.</p>
+    </div>
+    <div class="contact-options">
+
+      <!-- Fillout form -->
+      <div class="contact-option">
+        <div class="contact-option-label">Send a message</div>
+        <h3>Tell me about your business</h3>
+        <p>A few details about where you are. I respond within one working day.</p>
+        <div class="form-wrap">
+          <div style="width:100%;height:500px;" data-fillout-id="rSuShrAAjKus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+        </div>
       </div>
-      <div class="form-wrap">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSf3HvdH8r6zd2PWkq3rOh5GneNgGMAtwcpjlgRPaIhKLAVAgw/viewform?embedded=true"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Contact RevOptimise">
-          Loading…
-        </iframe>
+
+      <!-- Calendly -->
+      <div class="contact-option">
+        <div class="contact-option-label">Book a call</div>
+        <h3>Prefer a direct conversation?</h3>
+        <p>Pick a time that works for you. No agenda. Just a straight conversation about your GTM motion.</p>
+        <div class="calendly-card">
+          <div class="calendly-card-inner">
+            <div class="calendly-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C2B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h4>30-minute intro call</h4>
+            <p>We will cover where you are, what is not working, and whether there is a fit. No hard sell.</p>
+            <div class="calendly-detail">
+              <div class="calendly-detail-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                30 minutes
+              </div>
+              <div class="calendly-detail-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+                Video call
+              </div>
+              <div class="calendly-detail-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                No commitment required
+              </div>
+            </div>
+            <a href="https://calendly.com/jonopank/30min" target="_blank" rel="noopener" class="btn-calendly">Book a time &rarr;</a>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1083,13 +1083,10 @@
 </footer>
 
 <script>
-  // Nav scroll shadow
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
   });
-
-  // Smooth anchor scroll (for older browsers)
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
@@ -1100,5 +1097,7 @@
     });
   });
 </script>
+  <!-- Fillout embed script -->
+  <script src="https://server.fillout.com/embed/v1/"></script>
 </body>
 </html>
